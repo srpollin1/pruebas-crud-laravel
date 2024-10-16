@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductStore;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        return view('products.index');
+        $products = Product::orderBy('id', 'desc')->paginate();
+        return view('products.index', compact('products'));
     }
 
     public function create()
@@ -16,28 +19,32 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store()
+    public function store(ProductStore $request)
     {
-        return view('products.store');
+        $product = Product::create($request->all());
+
+        return redirect()->route('products.show', $product->id);
     }
 
-    public function show()
+    public function show(Product $product)
     {
-        return view('products.show');
+        return view('products.show', compact('product'));
     }
 
-    public function edit()
+    public function edit(Product $product)
     {
-        return view('products.edit');
+        return view('products.edit', compact('product'));
     }
 
-    public function update()
+    public function update(Request $request, Product $product)
     {
-        return view('products.update');
+        $product->update($request->all());
+        return redirect()->route('products.show', $product->id);
     }
 
-    public function destroy()
+    public function destroy(Product $product)
     {
-        return view('products.destroy');
+        $product->delete();
+        return redirect()->route('products.index');
     }
 }
