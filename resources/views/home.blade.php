@@ -5,7 +5,7 @@
     <a href="{{ route('animales.index') }}">Animales CRUD</a>
     <br>
     <br>
-    <a href="#">Productos CRUD</a>
+    <a href="{{ route('products.index') }}">Productos CRUD</a>
     <br>
     <br>
 @endsection

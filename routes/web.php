@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\ProductController;
 use \App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', HomeController::class);
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/products', 'index')->name('products.index');
+});
 
 Route::controller(AnimalController::class)->group(function () {
     Route::get('/animales', 'index')->name('animales.index');
