@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ProductController;
 use \App\Http\Controllers\HomeController;
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,15 +27,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
-Route::controller(ProductController::class)->group(function () {
-    Route::get('/products', 'index')->name('products.index');
-    Route::post('/products', 'store')->name('products.store');
-    Route::get('/products/create', 'create')->name('products.create');
-    Route::get('/products/{product}/edit', 'edit')->name('products.edit');
-    Route::put('/products/{product}', 'update')->name('products.update');
-    Route::get('/products/{product}', 'show')->name('products.show');
-    Route::delete('/products/{product}', 'destroy')->name('products.destroy');
-});
+Route::resource('songs', SongController::class)->names('songs');
+
+
+Route::resource('products', ProductController::class)->names('products');
+// Route::controller(ProductController::class)->group(function () {
+//     Route::get('/products', 'index')->name('products.index');
+//     Route::post('/products', 'store')->name('products.store');
+//     Route::get('/products/create', 'create')->name('products.create');
+//     Route::get('/products/{product}/edit', 'edit')->name('products.edit');
+//     Route::put('/products/{product}', 'update')->name('products.update');
+//     Route::get('/products/{product}', 'show')->name('products.show');
+//     Route::delete('/products/{product}', 'destroy')->name('products.destroy');
+// });
 
 Route::controller(AnimalController::class)->group(function () {
     Route::get('/animales', 'index')->name('animales.index');

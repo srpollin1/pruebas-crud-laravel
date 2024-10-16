@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(ProductSeeder::class);
+        $this->call(SongSeeder::class);
         Animal::factory(50)->create();
         User::factory(10)->create();
     }

@@ -10,6 +10,9 @@
             <a href="{{ route('products.index') }}" class="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-300">
                 Products CRUD
             </a>
+            <a href="{{ route('songs.index') }}" class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition duration-300">
+                Songs CRUD
+            </a>
         </div>
     </div>
 @endsection
