@@ -13,6 +13,9 @@
             <a href="{{ route('songs.index') }}" class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition duration-300">
                 Songs CRUD
             </a>
+            <a href="" class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
+                Songs CRUD
+            </a>
         </div>
     </div>
 @endsection
