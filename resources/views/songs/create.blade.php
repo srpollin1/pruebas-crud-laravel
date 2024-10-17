@@ -1,20 +1,22 @@
-@extends('layouts.plantilla')
-@section('title', 'Create Song')
-@section('content')
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-        <a href="{{ route('songs.index') }}" class="mb-4 text-blue-500 hover:text-blue-700">Volver a Canciones</a>
-        
-        <h1 class="text-3xl font-bold mb-6">Crear Canción</h1>
+@extends('layouts.retro')
 
-        <form action="{{ route('songs.store') }}" method="POST" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+@section('title', 'Create Song')
+
+@section('content')
+    <div class="nes-container is-dark with-title flex-container">
+        <div class="title">Crear Canción</div>
+
+        <a href="{{ route('songs.index') }}" class="nes-btn is-primary mb-4">Volver a Canciones</a>
+
+        <form action="{{ route('songs.store') }}" method="POST" class="nes-container is-light p-6 rounded-lg w-full max-w-md">
             @csrf
 
             <div class="mb-4">
-                <label for="name" class="block text-gray-700">Nombre de la Canción:</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+                <label for="name" class="nes-text is-primary">Nombre de la Canción:</label>
+                <input type="text" name="name" id="name" value="{{ old('name') }}" class="nes-input is-success mt-1" required placeholder="Ingrese el nombre de la canción">
             </div>
 
-            <button type="submit" class="w-full px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-300">
+            <button type="submit" class="nes-btn is-success w-full">
                 Crear
             </button>
         </form>

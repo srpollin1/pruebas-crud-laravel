@@ -1,21 +1,23 @@
-@extends('layouts.plantilla')
+@extends('layouts.retro')
+
 @section('title', 'Edit Song: ' . $song->name)
+
 @section('content')
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-        <a href="{{ route('songs.index') }}" class="mb-4 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out">Volver a canciones</a>
+    <div class="nes-container is-dark with-title flex-container">
+        <div class="title">Bienvenido a la página: {{ $song->name }}</div>
         
-        <h1 class="text-3xl font-bold mb-6">Bienvenido a la página: {{ $song->name }}</h1>
-        
-        <a href="{{ route('songs.edit', $song) }}" class="mb-4 inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition duration-300 ease-in-out">
+        <a href="{{ route('songs.index') }}" class="nes-btn is-primary mb-4">Volver a canciones</a>
+
+        <a href="{{ route('songs.edit', $song) }}" class="nes-btn is-warning mb-4">
             Editar canción
         </a>
 
-        <p class="text-lg text-gray-700 mb-6">{{ $song->name }}</p>
+        <p class="nes-text is-primary mb-6">{{ $song->name }}</p>
 
         <form action="{{ route('songs.destroy', $song) }}" method="POST" class="mt-6">
             @csrf
             @method('delete')
-            <button type="submit" class="inline-block px-6 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg transition duration-300 ease-in-out">
+            <button type="submit" class="nes-btn is-error">
                 Eliminar
             </button>
         </form>
