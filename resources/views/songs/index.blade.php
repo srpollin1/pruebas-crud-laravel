@@ -22,8 +22,8 @@
             @endforeach
         </ul>
         
-        {{-- <div class="mt-6">
+        <div class="mt-6">
             {{ $songs->links() }}
-        </div> --}}
+        </div>
     </div>
 @endsection

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(ProductSeeder::class);
         $this->call(SongSeeder::class);
+        $this->call(MovieSeeder::class);
         Animal::factory(50)->create();
         User::factory(10)->create();
     }
