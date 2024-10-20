@@ -25,6 +25,10 @@
                 class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
                 Games CRUD
             </a>
+            <a href=" {{route('projects.index')}} "
+                class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
+                Projects CRUD
+            </a>
         </div>
     </div>
 @endsection

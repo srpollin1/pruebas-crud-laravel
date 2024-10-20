@@ -5,6 +5,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProductController;
 use \App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::resource('movies', MovieController::class)->names('movies');
 
 Route::resource('games', GameController::class)->names('games');
 
+Route::resource('projects', ProjectController::class)->names('projects');
 
 Route::resource('products', ProductController::class)->names('products');
 // Route::controller(ProductController::class)->group(function () {

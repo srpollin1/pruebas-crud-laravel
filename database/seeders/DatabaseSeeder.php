@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SongSeeder::class);
         $this->call(MovieSeeder::class);
         $this->call(GameSeeder::class);
+        $this->call(ProjectSeeder::class);
         // Animal::factory(50)->create();
         User::factory(10)->create();
     }
