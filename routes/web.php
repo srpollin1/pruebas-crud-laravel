@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProductController;
 use \App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
@@ -31,6 +32,8 @@ Route::get('/', HomeController::class);
 Route::resource('songs', SongController::class)->names('songs');
 
 Route::resource('movies', MovieController::class)->names('movies');
+
+Route::resource('games', GameController::class)->names('games');
 
 
 Route::resource('products', ProductController::class)->names('products');

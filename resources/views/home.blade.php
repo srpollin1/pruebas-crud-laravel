@@ -4,17 +4,26 @@
     <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <h1 class="text-3xl font-bold mb-6">Bienvenido a la página principal</h1>
         <div class="space-y-4">
-            <a href="{{ route('animales.index') }}" class="inline-block px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition duration-300">
+            <a href="{{ route('animales.index') }}"
+                class="inline-block px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition duration-300">
                 Animales CRUD
             </a>
-            <a href="{{ route('products.index') }}" class="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-300">
+            <a href="{{ route('products.index') }}"
+                class="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-300">
                 Products CRUD
             </a>
-            <a href="{{ route('songs.index') }}" class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition duration-300">
+            <a href="{{ route('songs.index') }}"
+                class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition duration-300">
                 Songs CRUD 🎵
             </a>
-            <a href=" {{ route('movies.index') }} " class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
+            <a href=" {{ route('movies.index') }} "
+                class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
                 Movies CRUD 🎥
+            </a>
+            <br>
+            <a href=" {{route('games.index')}} "
+                class="inline-block px-6 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-lg transition duration-300">
+                Games CRUD
             </a>
         </div>
     </div>
